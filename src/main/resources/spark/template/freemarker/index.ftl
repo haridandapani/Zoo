@@ -5,7 +5,7 @@
     <div id = "demo"></div>
     <script type="text/javascript">
         let redirect = window.location.hostname +"/animal/123";
-        document.getElementById("demo").innerHTML = "Animal Specific Page: <a href = "+redirect+">"+redirect+"</a>"
+        document.getElementById("demo").innerHTML = "Animal Specific Page: "+ redirect
     </script>
     <form method = "POST" action="/zoo">
         Minimum Age: <input type = "number" name = "minage" id = "minage"></input><br>
