@@ -50,4 +50,28 @@ public class ZooDatabase {
     }
   }
 
+  public String getWithID(String id) {
+    try {
+      // SQL search
+      PreparedStatement prep = conn
+          .prepareStatement("SELECT animal, age, height from zoo WHERE id = ?");
+      prep.setString(1, id);
+
+      // Gather data
+      ResultSet result = prep.executeQuery();
+      String output = "";
+      while (result.next()) {
+        output = "This " + result.getString(1) + " is " + result.getString(2)
+            + " years old. Its normalized height is equal to " + result.getString(3);
+
+      }
+      result.close();
+      prep.close();
+      return output;
+    } catch (Exception e) {
+      e.printStackTrace();
+      return null;
+    }
+  }
+
 }

@@ -61,8 +61,10 @@ public class App {
     // Spark.post("/rave", new RaveGUI());
     // Spark.post("/setupWithRoom", new SetupWithRoomGUI());
     Spark.get("/", new HomeGUI(), freeMarker);
+    Spark.post("/poster", new HomeGUI(), freeMarker);
     Spark.post("/zoo", new ZooGUI(), freeMarker);
-
+    Spark.get("/animal/:animalID", new AnimalGUI(), freeMarker);
+    Spark.get("/room/:roomID", new AnimalGUI(), freeMarker);
   }
 
   /**
