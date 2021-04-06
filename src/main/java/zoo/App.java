@@ -15,6 +15,8 @@ import spark.template.freemarker.FreeMarkerEngine;
 public class App {
 
   private static final int DEFAULT_PORT = 9000;
+
+  public static final ZooDatabase zoo = new ZooDatabase("data/zoo.sqlite3");
   // URL PATHS
   public static final String LANDING_PAGE = "/";
 
@@ -59,6 +61,7 @@ public class App {
     // Spark.post("/rave", new RaveGUI());
     // Spark.post("/setupWithRoom", new SetupWithRoomGUI());
     Spark.get("/", new HomeGUI(), freeMarker);
+    Spark.post("/zoo", new ZooGUI(), freeMarker);
 
   }
 
